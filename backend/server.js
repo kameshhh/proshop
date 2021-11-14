@@ -1,27 +1,29 @@
-const express = require('express');
-const products = require('./data/products');
+import express from 'express';
+// import products from './data/products.js';
+import dotenv from 'dotenv'
+import connectDB from './config/db.js';
+import productRoutes from './routes/productRoutes.js'
+import { errorHandler, notFound } from './middleware/errorMiddleware.js';
+
+
 const app = express();
-const dotenv = require('dotenv');
 
 
 dotenv.config();
 
+connectDB();
+
 
 app.use(express.json({ extended: false }))
 app.get('/', (req, res) => {
-    res.send("This is An APpp")
+    res.send("This is An App")
 })
 
-app.get('/api/products', (req, res) => {
-    res.json(products)
+app.use('/api/products', productRoutes)
 
-})
+app.use(notFound)
 
-app.get('/api/products/:id', (req, res) => {
-    const product = products.find((p) => p._id === req.params.id)
-    res.json(product)
-
-})
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
 

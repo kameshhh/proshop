@@ -6,6 +6,7 @@ import Product from '../models/productModel.js'
 //get all products
 router.get('/', asyncHandler(async(req, res) => {
     const products = await Product.find({})
+
     res.json(products)
 
 }))

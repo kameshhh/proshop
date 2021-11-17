@@ -16,6 +16,10 @@ h2 {
     padding: 0.5rem 0;
 }
 
+.nav {
+    background-color: orange;
+}
+
 .rating span {
     margin: 0.1rem;
     font-size: 12px;

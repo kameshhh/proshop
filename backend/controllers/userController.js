@@ -83,7 +83,7 @@ const getUserProfile = asyncHandler(async(req, res) => {
 })
 
 
-//update user profile
+//update user profile 
 const updateUserProfile = asyncHandler(async(req, res) => {
     const user = await User.findById(req.user._id)
 

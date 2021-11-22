@@ -20,6 +20,15 @@ h2 {
     background-color: orange;
 }
 
+.navbarcheckout {
+    border: 2px solid orange;
+    align-items: center;
+    border-radius: 20px;
+    background: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
 .rating span {
     margin: 0.1rem;
     font-size: 12px;
